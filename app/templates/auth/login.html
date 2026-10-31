@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <div class="card border-0 shadow-sm rounded-4 bg-white p-4 p-md-5">
+        <div class="text-center mb-4">
+          <span class="brand-icon mb-3" style="width: 48px; height: 48px; font-size: 1.5rem;">
+            <i class="bi bi-feather"></i>
+          </span>
+          <h1 class="h3 fw-bold text-dark">Welcome back</h1>
+          <p class="text-muted small">Sign in to your Chronicle account</p>
+        </div>
+
+        <form method="POST" novalidate>
+          {{ form.hidden_tag() }}
+
+          <div class="mb-3">
+            {{ form.login_id.label(class="form-label fw-semibold") }}
+            {{ form.login_id(class="form-control" + (" is-invalid" if form.login_id.errors else ""), placeholder="Enter username or email") }}
+            {% for error in form.login_id.errors %}
+              <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <div class="mb-3">
+            <div class="d-flex justify-content-between align-items-center">
+              {{ form.password.label(class="form-label fw-semibold mb-0") }}
+            </div>
+            {{ form.password(class="form-control mt-1" + (" is-invalid" if form.password.errors else ""), placeholder="Enter password") }}
+            {% for error in form.password.errors %}
+              <div class="invalid-feedback">{{ error }}</div>
+            {% endfor %}
+          </div>
+
+          <div class="form-check mb-4">
+            {{ form.remember_me(class="form-check-input") }}
+            {{ form.remember_me.label(class="form-check-label text-muted small") }}
+          </div>
+
+          <div class="d-grid mb-3">
+            {{ form.submit(class="btn btn-primary py-2 rounded-pill fw-semibold shadow-sm") }}
+          </div>
+        </form>
+
+        <div class="text-center mt-3 border-top pt-3">
+          <span class="text-muted small">Don't have an account? </span>
+          <a href="{{ url_for('auth.register') }}" class="text-primary fw-semibold small text-decoration-none">
+            Create account
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

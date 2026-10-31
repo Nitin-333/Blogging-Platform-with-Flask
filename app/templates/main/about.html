@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-9">
+      <!-- About Hero -->
+      <div class="card border-0 bg-white shadow-sm rounded-4 p-4 p-md-5 mb-5 text-center">
+        <span class="brand-icon mx-auto mb-3" style="width: 56px; height: 56px; font-size: 1.75rem;">
+          <i class="bi bi-feather"></i>
+        </span>
+        <h1 class="display-5 fw-bold text-dark mb-3">About Chronicle</h1>
+        <p class="lead text-muted mx-auto" style="max-width: 650px;">
+          Chronicle is an open, modern blogging platform built from the ground up for writers, developers, and tech thinkers.
+        </p>
+
+        <!-- Platform Stats -->
+        <div class="row g-3 justify-content-center mt-3 pt-3 border-top">
+          <div class="col-4 col-md-3">
+            <h3 class="fw-bold text-primary mb-0">{{ stats.posts }}</h3>
+            <span class="text-muted small">Articles</span>
+          </div>
+          <div class="col-4 col-md-3">
+            <h3 class="fw-bold text-primary mb-0">{{ stats.categories }}</h3>
+            <span class="text-muted small">Categories</span>
+          </div>
+          <div class="col-4 col-md-3">
+            <h3 class="fw-bold text-primary mb-0">{{ stats.tags }}</h3>
+            <span class="text-muted small">Tags</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features Grid -->
+      <div class="row g-4 mb-5">
+        <div class="col-md-4">
+          <div class="card h-100 border-0 bg-white shadow-sm rounded-4 p-4 text-center">
+            <div class="brand-icon mx-auto mb-3" style="background: #eef2ff; color: #4f46e5;">
+              <i class="bi bi-markdown"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Rich Markdown</h5>
+            <p class="text-muted small mb-0">Write comfortably with EasyMDE live preview, syntax highlighting, and clean sanitized HTML.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 border-0 bg-white shadow-sm rounded-4 p-4 text-center">
+            <div class="brand-icon mx-auto mb-3" style="background: #fdf4ff; color: #c026d3;">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Robust Security</h5>
+            <p class="text-muted small mb-0">Flask-Login session management, CSRF protection, secure password hashing, and HTML bleach sanitization.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 border-0 bg-white shadow-sm rounded-4 p-4 text-center">
+            <div class="brand-icon mx-auto mb-3" style="background: #ecfdf5; color: #059669;">
+              <i class="bi bi-search"></i>
+            </div>
+            <h5 class="fw-bold mb-2">Search & Filters</h5>
+            <p class="text-muted small mb-0">Instant full-text query matching across titles and bodies, coupled with category and multi-tag filtering.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="card border-0 bg-white shadow-sm rounded-4 p-4">
+        <h4 class="fw-bold mb-3">Architectural Foundation</h4>
+        <p class="text-muted small mb-3">This platform is structured with industry best practices:</p>
+        <div class="row g-2">
+          <div class="col-sm-6">
+            <div class="p-3 bg-light rounded-3 d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-success"></i>
+              <span class="small fw-semibold">Application Factory & Blueprints</span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="p-3 bg-light rounded-3 d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-success"></i>
+              <span class="small fw-semibold">SQLAlchemy ORM & Alembic Migrations</span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="p-3 bg-light rounded-3 d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-success"></i>
+              <span class="small fw-semibold">Flask-Login & Flask-WTF Validation</span>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="p-3 bg-light rounded-3 d-flex align-items-center gap-2">
+              <i class="bi bi-check-circle-fill text-success"></i>
+              <span class="small fw-semibold">Gunicorn & Production Docker Ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

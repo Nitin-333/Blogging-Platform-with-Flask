@@ -1,0 +1,195 @@
+/* Custom styles for Modern Flask Blogging Platform */
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-subtle: #eef2ff;
+  --surface: #ffffff;
+  --background: #f8fafc;
+  --border-color: #e2e8f0;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.brand-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+/* Post Cards */
+.post-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.08);
+}
+
+.post-card .card-title a {
+  color: var(--text-main);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.post-card .card-title a:hover {
+  color: var(--primary);
+}
+
+.badge-tag {
+  background-color: #f1f5f9;
+  color: #475569;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+}
+
+.badge-tag:hover {
+  background-color: var(--primary-subtle);
+  color: var(--primary);
+}
+
+.badge-category {
+  background-color: #e0e7ff;
+  color: #3730a3;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+/* Article Prose */
+.article-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #1e293b;
+}
+
+.article-content h1, .article-content h2, .article-content h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.article-content pre {
+  background-color: #0f172a;
+  color: #f8fafc;
+  padding: 1.25rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.95rem;
+}
+
+.article-content code {
+  color: #d946ef;
+  font-size: 0.9em;
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  background-color: #f1f5f9;
+}
+
+.article-content pre code {
+  color: inherit;
+  background: none;
+  padding: 0;
+}
+
+.article-content blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  color: #475569;
+  font-style: italic;
+  background-color: #f8fafc;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0 8px 8px 0;
+}
+
+.article-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+.article-content table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+}
+
+.article-content table th, .article-content table td {
+  border: 1px solid var(--border-color);
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.article-content table th {
+  background-color: #f8fafc;
+}
+
+/* Comments */
+.comment-card {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.comment-card.nested {
+  margin-left: 2.5rem;
+  background-color: #fafafa;
+}
+
+/* Hero Section */
+.hero-gradient {
+  background: radial-gradient(circle at 10% 20%, rgb(239, 246, 255) 0%, rgb(245, 243, 255) 90%);
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* EasyMDE adjustments */
+.EasyMDEContainer .editor-toolbar {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.EasyMDEContainer .CodeMirror {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-color: #cbd5e1;
+  font-family: 'Fira Code', Consolas, Monaco, monospace;
+  font-size: 0.95rem;
+}

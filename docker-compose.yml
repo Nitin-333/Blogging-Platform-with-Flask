@@ -1,0 +1,21 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: flask-blog-platform:latest
+    container_name: flask_blog_app
+    ports:
+      - "8000:8000"
+    environment:
+      - FLASK_CONFIG=production
+      - SECRET_KEY=replace-with-a-robust-production-secret-key-32chars
+      - DATABASE_URL=sqlite:////app/data/prod_blog.db
+      - PORT=8000
+    volumes:
+      - blog_data:/app/data
+    restart: unless-stopped
+
+volumes:
+  blog_data:
+    driver: local
